@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
 
  	title = 'DatingApp';
 	jwtHelper = new JwtHelperService();
+	loading = false;
 
 	constructor(private authService: AuthService) { }
 

@@ -1,7 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <app-nav></app-nav>
 <div class="container">
-  <app-home></app-home>
+  <img *ngIf="loading" src="assets/images/loading.gif" width="64px" class="loading" />
+  <router-outlet></router-outlet>
   
 </div>
 
