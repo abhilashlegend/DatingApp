@@ -13,6 +13,7 @@ import { AppComponent } from '../app.component';
 export class NavComponent implements OnInit {
 
 	model: any = {};
+	photoUrl: string;
 	
 	constructor(public authService: AuthService, private alertify: AlertifyService, 
 		private router: Router, private appComponent: AppComponent) {
@@ -20,6 +21,8 @@ export class NavComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		this.authService.currentPhotoUrl.subscribe(photoUrl => this.photoUrl = photoUrl);
+		console.log(this.photoUrl);
 	}
 
 	login() {
