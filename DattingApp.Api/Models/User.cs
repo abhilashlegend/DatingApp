@@ -39,5 +39,9 @@ namespace DatingApp.Api.Models
 
         public ICollection<Like> Likees { get; set; }
 
+        public ICollection<Message> MessagesSent { get; set; }
+
+        public ICollection<Message> MessagesReceived { get; set; }
+
     }
 }
