@@ -15,7 +15,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace DatingApp.Api.Controllers
 {
     [ServiceFilter(typeof(LogUserActivity))]
-    [Authorize]
     [Route("api/users/{userId}/[controller]")]
     [ApiController]
     public class MessagesController : ControllerBase
@@ -83,7 +82,7 @@ namespace DatingApp.Api.Controllers
 
             messageForCreationDto.SenderId = userId;
 
-            var recipient = await _repo.GetUser(messageForCreationDto.RecipientId);
+            var recipient = await _repo.GetUser(messageForCreationDto.RecipientId, false);
 
             if(recipient == null)
             {

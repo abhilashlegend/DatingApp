@@ -4,6 +4,7 @@ import { MemberListComponent } from './members/member-list/member-list.component
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { MessagesComponent } from './messages/messages.component';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { ListsComponent } from './lists/lists.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
@@ -32,7 +33,9 @@ export const appRoutes: Routes = [
 				resolve: { user: MemberDetailResolver} },
 
 			{ path: 'messages', component: MessagesComponent, resolve: {messages1: MessagesResolver }},
-			{ path: 'lists', component: ListsComponent, resolve: {users: ListsResolver} },
+			{ path: 'lists', component: ListsComponent, resolve: {users: ListsResolver}},
+			{ path: 'admin', component: AdminPanelComponent, data: {roles: ['Admin', 'Moderator']} },
+			
 		]
 	},
 	

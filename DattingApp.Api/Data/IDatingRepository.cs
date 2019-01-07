@@ -17,7 +17,7 @@ namespace DatingApp.Api.Data
 
         Task<PagedList<User>> GetUsers(UserParams userParams);
 
-        Task<User> GetUser(int Id);
+        Task<User> GetUser(int Id, bool isCurrentUser);
 
         Task<Photo> GetPhoto(int Id);
 
